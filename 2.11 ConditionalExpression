@@ -1,0 +1,17 @@
+/* SEPTEMBER 1: Conditional Expression */
+DROP TABLE IF EXISTS bulltest;
+CREATE TABLE booltest (a int, b int);
+INSERT INTO booltest VALUES (1,0);
+SELECT * FROM booltest;
+
+/* Condition 1*/
+SELECT
+    CASE WHEN a THEN 'TRUE' ELSE 'FALSE' END AS boolA,
+    CASE WHEN b THEN 'TRUE' ELSE 'FALSE' END AS boolB
+    FROM booltest;
+    
+/* Another method to write the same conditions */
+SELECT
+    CASE a WHEN 1 THEN 'TRUE' ELSE 'FALSE' END AS boolA,
+    CASE b WHEN 1 THEN 'TRUE' ELSE 'FALSE' END AS boolB
+    FROM booltest;

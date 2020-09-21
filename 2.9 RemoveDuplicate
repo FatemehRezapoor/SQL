@@ -1,0 +1,22 @@
+/* SEPTEMBER 1: Remove Duplicate */
+
+SELECT continent FROM country;
+
+/* Now to demonstrate distinct continents*/
+SELECT DISTINCT continent FROM country;
+DROP TABLE IF EXISTS test;
+CREATE TABLE test ( A INT, B INT);
+INSERT INTO test VALUES (1,1);
+INSERT INTO test VALUES (2,1);
+INSERT INTO test VALUES (3,1);
+INSERT INTO test VALUES (4,1);
+INSERT INTO test VALUES (5,1);
+INSERT INTO test VALUES (1,2);
+INSERT INTO test VALUES (1,2);
+INSERT INTO test VALUES (1,2);
+INSERT INTO test VALUES (1,2);
+
+SELECT DISTINCT A FROM test;
+SELECT DISTINCT B FROM test;
+SELECT DISTINCT A,B FROM test;
+

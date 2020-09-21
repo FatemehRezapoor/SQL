@@ -1,0 +1,31 @@
+/* September 3, 2020 : AGGREGATE: Information derived from more than one row at a time. An aggregate function performs a calculation on a set of values, and returns a single value*/
+
+SELECT COUNT(*) FROM Country; /* Count is an aggregate function. Getting information from multiple rows*/
+
+/* let's see how many countries are in each region. */
+ 
+SELECT Region,Count(*) AS Count FROM Country
+    GROUP BY Region
+    ORDER BY Count DESC
+    ;
+    
+/* Let's use join function */
+SELECT album.title AS Album, track.track_number AS Tracks
+    FROM track
+    JOIN album
+    ON album.id = track.album_id
+    GROUP BY album.id
+    ORDER BY Tracks DESC, Album
+    ;
+    
+/* Let's use other aggregate numbers */
+SELECT COUNT(population) FROM Country;
+SELECT AVG(population) FROM Country;
+SELECT Region, AVG(population) FROM Country GROUP BY Region;
+SELECT Region, MIN(population), MAX (Population) FROM Country GROUP BY Region;
+SELECT Region, SUM(population) FROM Country GROUP BY Region;
+SELECT Name, Continent, Region,population FROM Country ORDER BY Region;
+
+/* COUNT DISTINCT VALUES: Will not consider the duplicates */
+SELECT COUNT (HeadOfState) FROM Country;
+SELECT COUNT (DISTINCT HeadOfState) FROM Country;

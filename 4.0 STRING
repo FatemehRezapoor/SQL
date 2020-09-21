@@ -1,0 +1,27 @@
+/* SEPTEMBER 2: JOIN clause */
+/* Goal is to get the price and customer name.
+So we need to get the item-id from sale and match that with id in item table */
+
+SELECT sale.id AS sale, sale.date, item.name, item.description,sale.price /* These lines present the header for the joint table */
+    FROM sale
+    JOIN item ON sale.item_id = item.id
+    ;
+    
+/* JOIN MULTIPLE TABLES: SALE, CUSTOMER AND ITEM */
+SELECT customer.name AS Cust, customer.zip, item.name AS item, item.description, sale.quantity, sale.price
+    FROM sale
+    JOIN item ON sale.item_id = item.id
+    JOIN customer on sale.customer_id = customer.id
+    ORDER BY Cust,item
+    ;
+    
+/* LET'S INCLUDE ALL CUSTOMERS WITH OR WITHOUT SALES. This means customer has to be on the left hand side*/
+INSERT INTO customer (name) VALUES ('Jane Smith');
+SELECT * FROM customer;
+
+SELECT customer.name AS Cust, customer.zip, item.name AS item, item.description, sale.quantity, sale.price
+    FROM customer
+    LEFT JOIN sale ON sale.customer_id = customer.id /* We get everything from the customer table were there is a left joint*/
+    LEFT JOIN item ON sale.item_id = item.id /* We get everything from the item table were there is a left joint*/
+    ORDER BY Cust,item
+    ;

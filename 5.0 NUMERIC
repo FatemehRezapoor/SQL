@@ -1,0 +1,13 @@
+/* September 3, 2020 : Numeric Values */
+
+/* INTEGER + INTEGER = INTEGER*/
+SELECT TYPEOF (1+1);
+
+/* INTEGER + REAL = REAL */
+SELECT TYPEOF (1+1.0);
+
+/* STRING */
+SELECT TYPEOF ('PANDA');
+
+/* STRING + STRING = INTEGER */
+SELECT TYPEOF ('PANDA' + 'BEAR')

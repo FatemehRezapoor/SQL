@@ -1,0 +1,13 @@
+/* September 3, 2020 : Numeric DIVISION */
+
+/* INTEGER / INTEGER = INTEGER*/
+SELECT (1/2); /* the result is integer so you won't get 0.5*/
+
+/* INTEGER/REAL = REAL */
+SELECT (1/2.0); /* Result is 0.5*/
+
+/* or you can convert the integer to real number */
+SELECT CAST(1 AS REAL)/2;
+
+/* GET REMAINDER */
+SELECT 17/5, 17%5;

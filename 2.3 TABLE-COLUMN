@@ -1,0 +1,4 @@
+/* SEPTEMBER 1: Columns */
+
+DROP TABLE IF EXISTS test;
+

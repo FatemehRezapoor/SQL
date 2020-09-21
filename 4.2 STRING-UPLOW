@@ -1,0 +1,10 @@
+/* SEPTEMBER 2: CHANGE TO UPPER OR LOWER CASE */
+
+SELECT 'sTrInG'='STRING';
+SELECT LOWER ('sTrInG') = LOWER ('STRING');
+SELECT UPPER ('sTrInG') = UPPER ('STRING');
+
+/* Filter by lower or upper case */
+SELECT UPPER(Name) FROM City;
+SELECT LOWER(Name) FROM City;
+

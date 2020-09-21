@@ -1,0 +1,23 @@
+/* SEPTEMBER 1: Insert & Delete Rows */
+
+DROP TABLE IF EXISTS test ;
+CREATE TABLE test (a Integer, b TEXT, c TEXT);
+
+/* INSERT TO THE TABLE */
+INSERT INTO test VALUES (1,'this','Right here');
+
+/* INSERT TO SPEXIFIC ROWS IN THE TABLE */
+INSERT INTO test (b,c) VALUES ('that','Over here');
+Select * from test;
+
+/* INSERT ANOTHER TABLE TO THE TABLE */
+INSERT INTO test (a,b,c) SELECT id, name, description from item;
+Select * from test;
+
+/* DELETE ROWS*/
+
+SELECT * FROM test WHERE a=3;
+DELETE FROM test WHERE a=3;
+Select * from test;
+
+

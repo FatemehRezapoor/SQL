@@ -1,0 +1,15 @@
+/* September 3, 2020 : DATA  & TIME*/
+
+/*Return current date and time based on UTC time zone */
+SELECT DATETIME ('now');
+SELECT DATE ('now');
+SELECT TIME ('now');
+
+SELECT DATETIME ('now','+1 day');
+SELECT DATETIME ('now','+1 month');
+SELECT DATETIME ('now','+2 year');
+SELECT DATETIME ('now','+1 day','+3 hours');
+
+
+
+

@@ -1,0 +1,22 @@
+/* SEPTEMBER 1: filter data */
+
+SELECT * FROM country;
+
+/* find countries with specific condition: MORE THAN A VALUE AND ORDER DESCENDING*/
+SELECT Name, Continent, Population FROM country WHERE Population<100000 ORDER BY Population DESC;
+
+/* BINARY AND CONDIITOINAL: ADDING ADDITIONAL CONDITIONS*/
+SELECT Name, Continent, Population FROM country WHERE Population<100000 OR Population IS NULL ORDER BY Population DESC;
+SELECT Name, Continent, Population FROM country WHERE Population < 100000 AND Continent='Africa' ORDER BY Population DESC;
+
+/* LIKE OPERATOR: ADDING ADDITIONAL CONDITIONS*/
+SELECT Name, Continent, Population FROM country WHERE Name LIKE '%island' ORDER BY Name; /* Looks for rows ending with island phrase */
+SELECT Name, Continent, Population FROM country WHERE Name LIKE '%island%' ORDER BY Name; /* Looks for rows ending with island and islands or any word which includes island phrase */
+SELECT Name, Continent, Population FROM country WHERE Name LIKE 'island%' ORDER BY Name; /* Looks for rows starting with island phrase */
+SELECT Name, Continent, Population FROM country WHERE Name LIKE '_a%' ORDER BY Name; /* Looks for rows that their second character is a. First character can be anything */
+
+/* IN OPERATOR: ADDING ADDITIONAL CONDITIONS*/
+SELECT Name, Continent, Population FROM country WHERE Continent IN ('Europe','Asia') ORDER BY Name; /* Looks for countries in Asia and Europe */
+
+
+

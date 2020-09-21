@@ -1,0 +1,9 @@
+/* September 3, 2020 : ROUND FUNCTION */
+
+SELECT ROUND (2.55555);
+
+/* Round to specific decimal places */
+SELECT ROUND (2.55555,3);
+
+/* Round to 0 decimal places */
+SELECT ROUND (2.55555,0);

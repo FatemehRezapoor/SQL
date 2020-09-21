@@ -1,0 +1,22 @@
+/* SEPTEMBER 1: Order Output */
+
+SELECT Name FROM country;
+
+/* Order continents by name*/
+SELECT Name FROM country ORDER BY Name; /* ASCI order which is Ascending*/
+
+/* Order continents by descending*/
+SELECT Name FROM country ORDER BY Name DESC;
+
+/* Order continents by Ascending*/
+SELECT Name FROM country ORDER BY Name ASC; /* Default*/
+
+/* Order by continent first and then name */
+SELECT Name,Continent FROM country ORDER BY continent, Name;
+
+/* Order by continent descending first and then region and name */
+SELECT Name,Continent,region FROM country ORDER BY continent DESC, Region, Name;
+
+
+
+

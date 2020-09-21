@@ -1,0 +1,16 @@
+/* SEPTEMBER 1: NULL VALUES */
+
+SELECT * FROM test;
+/* SEARCH FOR NULL VALEUS */
+SELECT * FROM test WHERE a=NULL; /* This command returns nothing because NULL is not a value, so we can't look for NULL with this command*/
+/* TO CHECK FOR NULL */
+SELECT * FROM test WHERE a IS NULL; 
+SELECT * FROM test WHERE a IS NOT NULL; 
+
+/* ADD EMPTY COLUMN */
+INSERT INTO test (a,b,c) VALUES (0,NULL, '');
+SELECT * FROM test;
+
+SELECT * FROM test WHERE b IS NULL;
+SELECT * FROM test WHERE c IS '';
+ 

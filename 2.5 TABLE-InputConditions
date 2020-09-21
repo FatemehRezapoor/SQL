@@ -1,0 +1,29 @@
+/* SEPTEMBER 1: Columns */
+
+DROP TABLE IF EXISTS test;
+CREATE TABLE test (a TEXT,b TEXT,c TEXT);
+INSERT INTO test (a,b) VALUES ('ONE','TWO');
+SELECT * FROM test;
+
+/* What if you want to add a default value?*/
+DROP TABLE IF EXISTS test;
+CREATE TABLE test (a TEXT,b TEXT,c TEXT DEFAULT 'panda'); /* It will use panda instead of NULL if you don't pass any value to c*/
+INSERT INTO test (a,b) VALUES ('ONE','TWO');
+SELECT * FROM test;
+
+/* WHAT IF WE WANT UNIQUE VALUES?*/
+DROP TABLE IF EXISTS test;
+CREATE TABLE test (a TEXT UNIQUE,b TEXT,c TEXT DEFAULT 'panda'); /* It will use panda instead of NULL if you don't pass any value to c*/
+INSERT INTO test (a,b) VALUES ('ONE','TWO');
+INSERT INTO test (a,b) VALUES ('ONE','TWO'); /* iT LOOKS FOR ALL UNIQUE VALUES AND IT FAILS IF IT DOESN'T MEET THE CRITERIA */
+INSERT INTO test (a,b) VALUES ('ONEONE','TWO');
+SELECT * FROM test;
+
+/* ADD ADITIONAL CONSTRAINTS*/
+DROP TABLE IF EXISTS test;
+CREATE TABLE test (a TEXT UNIQUE NOT NULL,b TEXT,c TEXT DEFAULT 'panda'); /* It will use panda instead of NULL if you don't pass any value to c*/
+INSERT INTO test (a,b) VALUES ('ONE','TWO');
+INSERT INTO test (a,b) VALUES ('ONE','TWO'); /* IT LOOKS FOR ALL UNIQUE VALUES AND IT FAILS IF IT DOESN'T MEET THE CRITERIA */
+INSERT INTO test (a,b) VALUES (NULL,'TWO'); /* IT FAILS DUE TO NULL CONDITIONS*/
+
+SELECT * FROM test;
